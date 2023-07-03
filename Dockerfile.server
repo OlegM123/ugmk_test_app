@@ -1,0 +1,8 @@
+FROM node:14-alpine
+WORKDIR /app
+COPY package*.json ./
+COPY products*.json ./
+EXPOSE 3001
+RUN npm install json-server
+COPY . .
+CMD ["npm", "run", "server"]
